@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html  ng-app="espumax">
 <head>
 
 	<meta charset="utf-8">
@@ -341,7 +341,7 @@
             </div><!-- end .container -->
             
             <!--------  PRODUTOS  -------->            
-            <div class="fullwidth-section" id="bg-1">
+            <div class="fullwidth-section" id="bg-1" ng-controller="productsController">
             	
                 <div class="fullwidth-section-content">
                 	
@@ -353,20 +353,12 @@
                             
                                     <ul>
                                         <li>
-                                            <a class="active" href="#" data-filter="*">All</a>
+                                            <a class="active" href="#" data-filter="*">Todos</a>
                                         </li>
-                                        <li>
-                                            <a href="#" data-filter=".term-1">Photography</a>
+                                        <li ng-repeat="category in categories">
+                                            <a href="#" data-filter=".{{category}}">{{ category }}</a>
                                         </li>
-                                        <li>
-                                            <a href="#" data-filter=".term-2">Industrial Design</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" data-filter=".term-3">Corporate</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" data-filter=".term-4">Architecture</a>
-                                        </li>
+ 
                                     </ul>
                                     
                                 </div><!-- end .portfolio-filter -->
@@ -381,34 +373,37 @@
                             
                             	<div class="portfolio-grid portfolio-isotope">
                                 	<!---------- ITEM ---------->
-                                    <div class="item width-1 term-2">
-                                    	
-                                        <div class="portfolio-item">
-                        	
-                                            <div class="portfolio-item-preview">
-                                                
-                                                <!-- <img src="" alt=""> -->
-                                                
-                                                <div class="">
+                                    <div ng-repeat="item in items">
+                                        <div class="item width-1 {{ item.category }}">
+                                        	
+                                            <div class="portfolio-item">
+                            	
+                                                <div class="portfolio-item-preview">
                                                     
-                                                    <div class="portfolio-item-description">
-                                                        
-                                                        <h3>
-                                                            <a href="portfolio-single.html">Corporate Identity</a>
-                                                        </h3>
-                                                        
-                                                        <h6>Design, Photography</h6>
-                                                        
-                                                    </div><!-- end .portfolio-item-description -->
+                                                    <!-- <img src="" alt=""> -->
                                                     
-                                                </div><!-- end .portfolio-item-overlay -->
+                                                    <div class="">
+                                                        
+                                                        <div class="portfolio-item-description">
+                                                            
+                                                            <h3>
+                                                                <a href="portfolio-single.html">
+                                                                    {{ item.name }}
+                                                                </a>
+                                                            </h3>
+                                                            
+                                                            <!-- <h6>Design, Photography</h6> -->
+                                                            
+                                                        </div><!-- end .portfolio-item-description -->
+                                                        
+                                                    </div><!-- end .portfolio-item-overlay -->
+                                                    
+                                                </div><!-- end .portfolio-item-preview -->
                                                 
-                                            </div><!-- end .portfolio-item-preview -->
-                                            
-                                        </div><!-- end .portfolio-item -->
-                                    
-                                    </div><!-- end .item -->
-                                    
+                                            </div><!-- end .portfolio-item -->
+                                        
+                                        </div><!-- end .item -->
+                                    </div>
                                 </div><!-- end .portfolio-grid -->
                             
                             </div><!-- end .span10 -->
@@ -881,9 +876,7 @@
     <a id="back-to-top" href="#">
     	<i class="ifc-up4"></i>
     </a>
-    
-    <!-- /// AngularJS  ////////  -->
-    <script src="assets/libs/angularjs/1.5.0/angular.min.js"></script>
+
 
     <!-- /// jQuery ////////  -->
 	<script src="assets/vendors/jquery-2.1.4.min.js"></script>
@@ -961,6 +954,14 @@
 	<!-- /// Custom JS ////////  -->
 	<script src="assets/js/main.js"></script>	
     
+    <!----------- AngularJS files -------------------------------------------------------------->
+
+    <!-- /// AngularJS  ////////  -->
+    <script type="text/javascript" src="libs/angular.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+
+    <!-- Controllers -->
+    <script src="app/controllers/productsController.js"></script>
     
 
 </body>
