@@ -70,7 +70,10 @@
 		max-width: 100%; 	   /* 2 */
 	}
 	
-	#logo img { display: block; }	
+	#logo img { 
+		display: block; 
+		max-height: 65px;
+	}	
 	
 	@media (max-width: 767px) {
 
@@ -273,7 +276,7 @@
 	#mobile-menu {
 		border-bottom: 1px solid #e0e0e0;
 		margin-bottom: 0;
-		background-color: #85c334;
+		background-color: #00CF81;
 	}
 	
 	#mobile-menu li {	
