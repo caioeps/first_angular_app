@@ -835,7 +835,9 @@
 					mapCaption = $t.attr("data-caption"),
 					mapType = "ROADMAP",
 					mapHeight = $t.attr("data-mapheight"),
-					popUp = false;
+					popUp = false,
+					latitude,
+					longitude;
 				
 				if ($t.attr("data-zoom") !== undefined) {
 					mapZoom = parseInt($t.attr("data-zoom"),10);
@@ -852,6 +854,14 @@
 				if ($t.attr("data-popup") !== undefined) {
 					popUp = $t.data("popup");
 				} 
+
+				if ($t.attr("data-latitude") !== undefined) {
+					latitude = parseFloat($t.data("data-latitude"));
+				} 
+
+				if ($t.attr("data-longitude") !== undefined) {
+					longitude = parseFloat($t.data("data-longitude"));
+				} 
 				
 				$t.gMap({
 					maptype: mapType,
@@ -861,11 +871,8 @@
 						address: mapAddress,
 						html: mapCaption,
 						popup: popUp,
-						icon: { 
-							image: "assets/images/map-marker.png",
-							iconsize: [163, 175],
-							iconanchor: [80,80]
-						}
+						latitude: latitude,
+						longitude: longitude
 					}],
 					controls: {
 						panControl: true,

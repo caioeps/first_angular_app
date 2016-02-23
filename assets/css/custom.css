@@ -1,0 +1,56 @@
+/* Para telas maiores */
+@media only screen and (min-width: 768px) {
+	.products-offset {
+		margin-left: 26%;
+	}
+}
+
+/* Para telas menores */
+@media only screen and (max-width: 767px) {
+	.products-offset {
+		margin-left: 40%;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.products-offset {
+		margin-left: 38%;
+	}
+}
+
+@media only screen and (max-width: 490px) {
+	.products-offset {
+		margin-left: 35%;
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	.products-offset {
+		margin-left: 33%;
+	}
+}
+
+@media only screen and (max-width: 350px) {
+	.products-offset {
+		margin-left: 29%;
+	}
+}
+
+.white {
+	color: white;
+}
+
+li.unidades{
+	list-style-type: none;
+}
+
+li.unidades > div {
+	margin: 5% 5% 5% 5%;
+	padding: 10px 10px 10px 10px;
+	border-top: 2px solid white;
+}
+
+li.unidades > div:hover {
+	border-top: 2px solid #00CF81;
+	transition: 0.4s;
+}
