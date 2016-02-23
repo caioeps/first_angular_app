@@ -1,21 +1,31 @@
 app.controller('productsController', ['$scope', function($scope){
 	$scope.categories = [
-		'lpz',
-		'pool'
+		'Limpeza',
+		'Automotivos',
+		'Piscina',
+		'Lixeiras'
 	];
 
 	$scope.items = [
 		{
 			name: 'nome1',
-			category: 'lpz'
+			category: 'Limpeza',
+			brands: 'Marca 1, Marca 2'
 		},
 		{
 			name: 'nome2',
-			category: 'lpz'
+			category: 'Limpeza',
+			brands: 'Marca 3'
 		},
 		{
 			name: 'nome3',
-			category: 'pool'
+			category: 'Piscina',
+			brands: 'Marca 5, Marca 6'
+		},
+		{
+			name: 'nome4',
+			category: 'Automotivos',
+			brands: 'Marca 7'
 		}
 	];
 }]);
