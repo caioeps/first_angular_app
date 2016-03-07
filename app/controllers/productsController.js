@@ -19,6 +19,6 @@ app.controller('productsController', ['$scope', function($scope){
 
 	ng.items = new Array;
 	ng.items = ng.items.concat(produtosDeLimpeza, produtosPlasticos, produtosAutomotivos,
-													produtosDescartaveis, produtosDePiscina, produtosDiversos);
+														 produtosDescartaveis, produtosDePiscina, produtosDiversos);
 
 }]);

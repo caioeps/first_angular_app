@@ -6,11 +6,11 @@ function Product(name, category){
 Product.getArrayOfProductsFromStringArray = function(stringArray, category) {
 	var productsArray = new Array();
 
-	for(i = 0; i < stringArray.length; i++) {
+	for(let i = 0; i < stringArray.length; i++) {
 		product = new Product(stringArray[i], category);
 		productsArray = productsArray.concat(product);
 	}
-	
+
 	return productsArray;
 };
 
