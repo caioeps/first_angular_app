@@ -1,0 +1,274 @@
+<body class="sticky-header">
+	
+	<div id="wrap">
+    
+		<div id="header-wrap">
+			<div id="header">
+			
+			<!-- /// HEADER  //////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+				<div class="container">
+                    <div class="row">
+                        <div class="span3 full-height">
+                        
+                            <!-- // Logo // 131x53 -->
+                            <div id="logo">
+                                <a href="index.html">
+                                    <img src="assets/images/logo.png" alt="website logo">
+                                </a>
+                            </div>
+                        
+                        </div><!-- end .span3 -->
+                        <div class="span9">
+                        
+                            <!-- // Mobile menu trigger // -->
+                            
+                            <a href="#" id="mobile-menu-trigger">
+                                <i class="fa fa-bars"></i>
+                            </a>
+                            
+                            <nav>
+                                <ul class="sf-menu fixed" id="menu">
+                                    <li class="dcurrent">
+                                        <a href="#sobre">Sobre Nós</a>
+                                    </li>           
+                                    <li>
+                                        <a href="#produtos">Produtos</a>
+                                    </li>
+                                    <li>
+                                        <a href="#unidades">Unidades</a>
+                                    </li>                         
+                                </ul>
+                            </nav>
+    
+                        </div><!-- end .span9 -->
+                    </div><!-- end .row -->		
+				</div><!-- end .container -->
+			
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+			</div><!-- end #header -->
+		</div><!-- end #header-wrap -->	
+		<div id="content">
+		
+		<!-- /// CONTENT  /////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+        <!-------- A EMPRESA -------->
+        <div class="container headline" ng-controller="aboutUsController">
+        	<div class="row">
+            	<div class="span3">
+                	
+                    <h2 id="sobre">Sobre nós</h2>
+                    
+                    <br>
+                                            
+                </div><!-- end .span3 -->
+                <div class="span9">
+                	
+                    <ul class="services-list three-cols">
+                    	<li>
+                        	
+                            <div class="icon-box-6">
+                                                            
+                                <h3>
+                                    <a href="">Meta</a>
+                                </h3>
+          
+                                <div class="icon-box-content">                         
+
+                                    <p>
+                                        {{goal}}
+                                    </p>
+                                
+                                </div><!-- end .icon-box-content -->
+                                
+                            </div><!-- end .icon-box-6 -->
+                            
+                        </li>
+                        <li>
+                        	
+                            <div class="icon-box-6">
+                                                            
+                                <h3>
+                                    <a href="">Missão</a>
+                                </h3>
+          
+                                <div class="icon-box-content">                                                            
+                                    
+                                    <p>
+                                        {{mission}}
+                                    </p>
+                                
+                                </div><!-- end .icon-box-content -->
+                                
+                            </div><!-- end .icon-box-6 -->
+                            
+                        </li>
+                        <li>
+                        	
+                            <div class="icon-box-6">
+                        
+                                <h3>
+                                    <a href="">Visão</a>
+                                </h3>
+          
+                                <div class="icon-box-content">                                                            
+                                    
+                                    <p>
+                                        {{vision}}
+                                    </p>
+                                
+                                </div><!-- end .icon-box-content -->
+                                
+                            </div><!-- end .icon-box-6 -->
+                            
+                        </li>
+                    </ul>
+                    
+                </div><!-- end .span9 -->
+            </div><!-- end .row -->
+        </div><!-- end .container -->
+        
+        <!--------  PRODUTOS  -------->            
+        <div class="fullwidth-section" id="bg-1" ng-controller="productsController">
+        	
+            <div class="fullwidth-section-content">
+            	
+                <div class="container headline">
+                    <div class="row">
+                        <div class="span3" id="produtos">
+                            <h2>
+                                Produtos
+                            </h2>
+                        </div>
+                        <div class="span9">
+                        
+                            <div class="portfolio-filter">
+                        
+                                <ul>
+                                    <!-- <li>
+                                        <a class="active" href="#" data-filter="*">Todos</a>
+                                    </li> -->
+                                    <li ng-repeat="category in categories">
+                                        <a href="" data-filter=".{{category}}">{{ category }}</a>
+                                    </li>
+
+                                </ul>
+
+                                <div class="portfolio-grid portfolio-isotope">
+                                <!---------- ITEM ---------->
+                                <div ng-repeat="item in items">
+                                    <div class="item width-1 {{ item.category }}">
+                                        
+                                        <div class="portfolio-item">
+                            
+                                            <div class="portfolio-item-preview">
+                                                
+                                                <!-- <img src="" alt=""> -->
+                                                
+                                                <div class="">
+                                                    
+                                                    <div class="portfolio-item-description">
+                                                        
+                                                        <h4>
+                                                            {{ item.name }}
+                                                        </h4>
+                                                        
+                                                        <!-- <h6>{{ item.brands }}</h6> -->
+                                                        
+                                                    </div><!-- end .portfolio-item-description -->
+                                                    
+                                                </div><!-- end .portfolio-item-overlay -->
+                                                
+                                            </div><!-- end .portfolio-item-preview -->
+                                            
+                                        </div><!-- end .portfolio-item -->
+                                    
+                                    </div><!-- end .item -->
+                                </div>
+                            </div><!-- end .portfolio-grid -->
+
+                                
+                            </div><!-- end .portfolio-filter -->
+                    
+                        </div><!-- end .span12 -->
+                    </div><!-- end .row -->
+                </div><!-- end .container -->
+                
+                <div class="container-fluid">
+                	<div class="row">
+                    	<div class="products-offset span8">
+                        
+                        	
+                        </div><!-- end .span10 -->
+                    </div><!-- end .row -->
+                </div><!-- end .container-fluid -->
+                
+            </div><!-- end .fullwidth-section-content -->
+            
+        </div><!-- end .fullwidth-section -->
+        
+        <!------------- ENDEREÇOS E CONTATOS -------->
+        <div class="fullwidth-section" id="bg-2" ng-controller="addressesController">
+        
+        	<div class="fullwidth-section-content  headline">
+            	<h2 class="white" id="unidades">Unidades</h2>
+                <div class="container">
+                	<div class="row">
+
+                        <div class="container">
+             
+                            <ul class="tabs-menu ">
+                                <li class="span4 unidades" ng-repeat="store in stores" ng-click="getPosition(store)" >
+                                    <div class="">
+                                        <a href="#content-tab-1-{{ $index }}" class="span12">{{ store.name }}</a>
+                                    </div>                                    
+                                </li>
+
+                            </ul><!-- end .tabs-menu -->
+                             
+                            <div class="tabs span4">
+                                 
+                                <div class="tab-content white" id="content-tab-1-{{ marker.id }}">
+                                             
+                                    {{marker.address}} <br />
+                                    {{marker.number}} <br />
+                                    {{marker.phone}}
+                                 
+                                </div><!-- end .tab-content -->
+                                 
+                            </div><!-- end .tabs --> 
+
+                            <div class="span8">
+                                <ng-map 
+                                    center="{{marker.address}}, {{marker.number}}"
+                                    pan-control="true"
+                                    map-type-control="true"
+                                    map-type-control-options="{style:'DROPDOWN_MENU'}"
+                                    zoom-control="true"
+                                    zoom-control-options="{style:'SMALL'}"
+                                    max-zoom="16"
+                                    min-zoom="15"
+                                    draggable="true">
+                                    <marker 
+                                        position="{{marker.address}}, {{marker.number}}">
+                                    </marker>
+                                </ng-map>
+                            </div>
+                         
+                        </div><!-- end .tab-container -->
+
+                    </div><!-- end .row -->
+                </div><!-- end .container -->
+                
+            </div><!-- end .fullwidth-section-content -->
+        
+        </div><!-- end .fullwidth-section -->
+
+        </div> <!-- end #content -->		
+	</div><!-- end #wrap -->
+    
+    <a id="back-to-top" href="#">
+    	<i class="ifc-up4"></i>
+    </a>
+
+</body>
