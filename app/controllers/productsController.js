@@ -1,31 +1,24 @@
 app.controller('productsController', ['$scope', function($scope){
-	$scope.categories = [
+	var ng = $scope;
+
+	var produtosDeLimpeza    = Product.getProdutosDeLimpeza(),
+			produtosPlasticos    = Product.getProdutosPlasticos(),
+			produtosAutomotivos  = Product.getProdutosAutomotivos(),
+			produtosDescartaveis = Product.getProdutosDescartaveis(),
+			produtosDePiscina    = Product.getProdutosDePiscina(),
+			produtosDiversos     = Product.getProdutosDiversos();
+
+	ng.categories = [
 		'Limpeza',
+		'Plásticos',
 		'Automotivos',
+		'Descartáveis',
 		'Piscina',
-		'Lixeiras'
+		'Diversos'
 	];
 
-	$scope.items = [
-		{
-			name: 'nome1',
-			category: 'Limpeza',
-			brands: 'Marca 1, Marca 2'
-		},
-		{
-			name: 'nome2',
-			category: 'Limpeza',
-			brands: 'Marca 3'
-		},
-		{
-			name: 'nome3',
-			category: 'Piscina',
-			brands: 'Marca 5, Marca 6'
-		},
-		{
-			name: 'nome4',
-			category: 'Automotivos',
-			brands: 'Marca 7'
-		}
-	];
+	ng.items = new Array;
+	ng.items = ng.items.concat(produtosDeLimpeza, produtosPlasticos, produtosAutomotivos,
+													produtosDescartaveis, produtosDePiscina, produtosDiversos);
+
 }]);
