@@ -1,1 +1,1 @@
-var app = angular.module('espumax', ['ngMap']);
+var app = angular.module('espumax', ['ngRoute', 'ngMap']);
