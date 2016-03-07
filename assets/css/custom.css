@@ -54,3 +54,12 @@ li.unidades > div:hover {
 	border-top: 2px solid #00CF81;
 	transition: 0.4s;
 }
+
+/* Overrides layout.css */
+#logo img {
+	max-height: 100px;
+}
+
+.full-height {
+	height: 100%;
+}
